@@ -1,12 +1,15 @@
 const findBestEmployee = function (employees) {
   // твой код
-  const employe = Object.values(employees);
-  console.table(employe);
-  const values = employe;
+  let idx = 0;
+  const names = Object.keys(employees);
+  if (names.length == 0) return "";
+  const values = Object.values(employees);
   const max = Math.max(...values);
-  console.log(max);
+  for (let i = 0; i < values.length; i += 1) {
+    if (max === values[i]) idx = i;
+  }
+  return names[idx];
 };
-
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
