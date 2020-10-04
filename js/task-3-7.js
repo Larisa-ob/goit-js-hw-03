@@ -1,14 +1,16 @@
 function calculateTotalPrice(array, prop) {
   // Write code under this line
-  let getALL = [];
-  let keys = prop;
-  console.log(keys);
+  let key = prop;
+  let result = 0;
+  let keys = "";
   if (array.length == 0) return result;
-  let keyName = array.keys;
-  for (keyName of array) {
-    console.log(keyName);
+  for (keys of array) {
+    if (keys.name == key) {
+      result += keys.price * keys.quantity;
+      continue;
+    }
   }
-  console.log(getALL);
+  return result;
 }
 // Объекты и ожидаемый результат
 const products = [
@@ -24,11 +26,11 @@ const products = [
 console.log(calculateTotalPrice(products, "Радар"));
 // 9080
 
-//console.log(calculateTotalPrice(products, 'Сканер'));
+console.log(calculateTotalPrice(products, "Сканер"));
 // 10200
 
-//console.log(calculateTotalPrice(products, 'Захват'));
+console.log(calculateTotalPrice(products, "Захват"));
 // 2400
 
-//console.log(calculateTotalPrice(products, 'Дроид'));
+console.log(calculateTotalPrice(products, "Дроид"));
 // 2800
